@@ -1,4 +1,4 @@
-import initialState from '../constants/initialState.js';
+import initialState from '../constants/initialState.js.js';
 
 
 function counterReducer(state = {num:0}, action) {

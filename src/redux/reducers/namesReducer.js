@@ -1,4 +1,4 @@
-import initialState from '../constants/initialState.js';
+import initialState from '../constants/initialState.js.js';
 
 const namesReducer = (state = { allNames: [] }, action) => {
     switch (action.type) {

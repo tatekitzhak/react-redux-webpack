@@ -5,9 +5,12 @@ class App extends Component {
    handleNameChange = (e) => {
       this.props.onChangeName(e.target.value)
    }
+   deleteItem = (e) => {
+      this.props.deleteItem(this.props.allNames)
+   }
 
    render() {
-      console.log(this.props)
+      console.log("App:", this.props)
       return (
          <>
             <div >
@@ -20,9 +23,10 @@ class App extends Component {
 
                   <button
                      onClick={this.props.onAddName}>Add name</button>
-
+                  <button
+                     onClick={this.props.deleteItem}>Delete item</button>
                   <ul>
-                     {this.props.allNames && this.props.allNames.map((name, index)=> (
+                     {this.props.allNames && this.props.allNames.map((name, index) => (
                         <li key={index}> {name}</li>
                      ))}
                   </ul>
@@ -32,18 +36,18 @@ class App extends Component {
    }
 }
 
-
-function mapStateToProps(state) {
+function mapStateToProps(state,ownProps) {
    return {
       name: state.name,
-    allNames: state.allNames
+      allNames: state.allNames
    }
 }
 const mapDispatchToProps = (dispatch) => {
    return {
-     onChangeName: (name) => dispatch({ type: "CHANGE_NAME", name: name }),
-     onAddName: () => dispatch({ type: "ADD_NAME",name }),
+      onChangeName: (inputValue) => dispatch({ type: "CHANGE_NAME", name: inputValue }),
+      onAddName: () => dispatch({ type: "ADD_NAME", name }),
+      deleteItem: (item) => dispatch({type: "DELETE_NAME", item}) 
    }
- }
- 
- export default connect(mapStateToProps, mapDispatchToProps)(App);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
