@@ -1,6 +1,6 @@
 import initialState from '../constants/initialState.js';
 
-const namesReducer = (state = initialState.allNames , action) => {
+const namesReducer = (state = { allNames: [] }, action) => {
     switch (action.type) {
 
         case "ALLNAMES":
