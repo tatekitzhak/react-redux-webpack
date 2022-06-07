@@ -6,7 +6,7 @@ class App extends Component {
       this.props.onChangeName(e.target.value)
    }
    deleteItem = (e) => {
-      this.props.deleteItem(this.props.allNames)
+      this.props.deleteItem()
    }
 
    render() {
@@ -44,9 +44,9 @@ function mapStateToProps(state,ownProps) {
 }
 const mapDispatchToProps = (dispatch) => {
    return {
-      onChangeName: (inputValue) => dispatch({ type: "CHANGE_NAME", name: inputValue }),
-      onAddName: () => dispatch({ type: "ADD_NAME", name }),
-      deleteItem: (item) => dispatch({type: "DELETE_NAME", item}) 
+      onChangeName: (inputValue) => dispatch({ type: "CHANGE_ITEM", name: inputValue }),
+      onAddName: () => dispatch({ type: "ADD_ITEM", name }),
+      deleteItem: (item) => dispatch({type: "REMOVE_DATA", id: 2}) 
    }
 }
 
