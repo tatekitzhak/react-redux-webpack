@@ -1,5 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+<<<<<<< HEAD
 import { createStore, combineReducers} from 'redux';
 import { Provider} from 'react-redux';
 
@@ -17,5 +18,13 @@ root.render(
         <App1 rooProps="App home" />
     </Provider>
 );
+=======
+
+import App from './app.js';
+console.log('index:')
+>>>>>>> dev
 
 
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<App rooProps="App home" />);
