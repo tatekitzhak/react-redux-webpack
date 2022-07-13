@@ -49,6 +49,10 @@
     "url": ""
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@material-ui/styles": "^4.11.5",
+    "mui-layout": "^1.2.9",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   }
