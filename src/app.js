@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from '@material-ui/styles';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme  } from '@material-ui/core/styles';
 import { Box, Typography } from "@material-ui/core";
 import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
@@ -14,7 +14,7 @@ import {
    presets,
 } from 'mui-layout';
 
-const baseTheme = createMuiTheme(); // or use your own theme;
+const baseTheme = createTheme(); // or use your own theme;
 const config = presets.createStandardLayout();
 
 const App = () => (
